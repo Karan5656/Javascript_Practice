@@ -1,4 +1,4 @@
-//Question 1
+//Write a function that creates a new array with the user inputs -
 var n = 3
 var value = 'apple'
 var array = []
@@ -9,9 +9,11 @@ function fun1(n, value) {
     return array
 }
 console.log(fun1(n, value))
+//Expected output: [ 'apple', 'apple', 'apple' ]
 
+//------------------------------------------------------------------------------------
 
-//Question 2
+//Write a function that reverts the input array -
 inputArray = [4, 9, 1]
 function reverseArray(inputArray) {
     var output = []
@@ -21,14 +23,18 @@ function reverseArray(inputArray) {
     return output
 }
 console.log(reverseArray(inputArray))
+//Expected output: [ 1, 9, 4 ]
 
+//------------------------------------------------------------------------------------
 
-//Question 3
+//Write a method that clears array from all unnecessary elements -
 userInput = [1, false, 2, undefined, null, '', 3]
 console.log(userInput.filter(Number))
+//Expected output: [ 1, 2, 3 ]
 
+//------------------------------------------------------------------------------------
 
-//Question 4
+//Write a method that should return an array without listed values -
 input1 = [1, 2, 5, 6, 8, 9, 8]
 without = [8, 9]
 for (i = 0; i < input1.length; i++) {
@@ -39,17 +45,21 @@ for (i = 0; i < input1.length; i++) {
     }
 }
 console.log(input1)
+//Expected output: [ 1, 2, 5, 6, 8 ]
 
+//------------------------------------------------------------------------------------
 
-//Question 5
+//Write a method that returns a duplicate-free array -
 userInput1 = [1, 4, 5, 6, 5, 4, 7]
 function removeDuplicates(arr) {
     return arr.filter((value, index) => arr.indexOf(value) == index)
 }
 console.log(removeDuplicates(userInput1))
+//Expected output: [ 1, 4, 5, 6, 7 ]
 
+//------------------------------------------------------------------------------------
 
-//Question 6
+//Write a function that compares two arrays and returns true if they are identical
 var array1 = [1, 2, 3]
 var array2 = [1, 2, 3]
 function checkIdenticalArray(array1, array2) {
@@ -68,3 +78,4 @@ function checkIdenticalArray(array1, array2) {
     return flag
 }
 console.log(Boolean(checkIdenticalArray(array1, array2)))
+//Expected output: true
