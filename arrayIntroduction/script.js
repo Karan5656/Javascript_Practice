@@ -1,16 +1,18 @@
-function getPageContent(page){
-    const targetDiv = document.getElementById(page)
-    let childLength = document.getElementById('content').children.length
+function getPageContent(page) {
+  const targetDiv = document.getElementById(page)
+  const container = document.querySelector('.container')
+  const containerChildren = Array.from(container.children)
+  containerChildren.forEach(checkForBlock)
 
-    for(i=3;i<childLength*4;i=i+4){
-       if(document.getElementById('content').childNodes[i].style.display === 'block'){
-        document.getElementById('content').childNodes[i].style.display = 'none'
-      }
-    }
-
-    if (targetDiv.style.display !== "none") {
-      targetDiv.style.display = "none";
-    } else {
-      targetDiv.style.display = "block";
-    }
+  if (targetDiv.style.display !== "none") {
+    targetDiv.style.display = "none";
+  } else {
+    targetDiv.style.display = "block";
   }
+}
+
+function checkForBlock(element) {
+  if (element.style.display === 'block') {
+    element.style.display = 'none'
+  }
+}
