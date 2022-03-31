@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
   <title>Array</title>
@@ -17,7 +18,7 @@
       <p class="h2 mb-0 py-3 text-center"><span class="header-span">Array Introduction</span></p>
     </a>
   </div>
-  <div class="sidebar" style="width: 250px;">
+  <div class="sidebar position-absolute">
     <ul>
       <li>
         <a href="#string" class="myLink" onclick="getPageContent('string')">
@@ -67,6 +68,7 @@
     </ul>
   </div>
   <section>
+
     <div class="container" id="content">
 
       <!--Intro div-->
@@ -82,7 +84,13 @@
         <div class="header-inner">
           <p class="h3 text-start">Convert array to string</p>
         </div>
-        <div class="code">
+        <div class="about my-3">
+          The <code>join()</code> method creates and returns a new string by concatenating all of the elements in an
+          array (or an
+          array-like object), separated by commas or a specified separator string. If the array has only one item, then
+          that item will be returned without using the separator.
+        </div>
+        <div class="code my-3">
           <code>
             <span class="keyword">var</span>
             fruits = [<span class="string">'Apple', 'Orange', 'Kiwi', 'Mango', 'Banana'</span>]<br>
@@ -91,12 +99,37 @@
             <span class="comment">//string</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue1" name="arrayValue">
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getStringOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue('1')">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output1"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Last Element div-->
       <div id="lastElement" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Last element of the array</p>
+        </div>
+        <div class="about my-3">
+          The length property returns the number of elements in an array. Subtracting 1 from the length of an array
+          gives the index of the last element of an array using which the last element can be accessed.
         </div>
         <div class="code">
           <code>
@@ -106,12 +139,38 @@
             <span class="comment">//Banana</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue2" name="arrayValue">
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getLastElementOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue('2')">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output2"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Push div-->
       <div id="push" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.push()</p>
+        </div>
+        <div class="about my-3">
+          The <code>push()</code> method adds one or more elements to the end of an array and returns the new
+          length of
+          the array.
         </div>
         <div class="code">
           <code>
@@ -123,12 +182,49 @@
               ]</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue3" name="arrayValue"><br>
+            <div class="secondary-input">
+              <div class="container">
+                <div class="row mx-5 my-3">
+                  <div class="col-3 align-self-center text-end">Push Element(s):</div>
+                  <div class="col-9">
+                    <input type="text" class="secondaryInput" id="pushElementValue" name="pushElementValue">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getPushOutput()">Run</button>
+                  <button class="button my-2"
+                    onclick="resetValue('3'); document.getElementById('unshiftElementValue').value = ''">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output3"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Pop div-->
       <div id="pop" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.pop()</p>
+        </div>
+        <div class="about my-3">
+          The <code>pop()</code> method removes the last element from an array and returns that element. This method
+          changes the
+          length of the array.
         </div>
         <div class="code">
           <code>
@@ -139,12 +235,37 @@
             <span class="comment">// expected output: [ 'Apple', 'Orange', 'Kiwi', 'Mango' ]</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue4" name="arrayValue">
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getPopOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue('4')">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output4"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Unshift div-->
       <div id="unshift" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.unshift()</p>
+        </div>
+        <div class="about my-3">
+          The <code>unshift()</code> method adds one or more elements to the beginning of an array and returns the new
+          length of the array.
         </div>
         <div class="code">
           <code>
@@ -156,12 +277,48 @@
               ]</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue5" name="arrayValue"><br>
+            <div class="secondary-input">
+              <div class="container">
+                <div class="row mx-5 my-3">
+                  <div class="col-3 align-self-center text-end">Unshift Element(s):</div>
+                  <div class="col-9">
+                    <input type="text" class="secondaryInput" id="unshiftElementValue" name="unshiftElementValue">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getUnshiftOutput()">Run</button>
+                  <button class="button my-2"
+                    onclick="resetValue('5'); document.getElementById('unshiftElementValue').value = ''">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output5"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Splice div-->
       <div id="splice" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.splice()</p>
+        </div>
+        <div class="about my-3">
+          The <code>splice()</code> method changes the contents of an array by removing or replacing existing elements
+          and/or adding new elements in place.
         </div>
         <div class="code">
           <code>
@@ -172,12 +329,63 @@
             <span class="comment">// expected output: [ 'Apple', 'Orange', 'Cherry', 'Mango', 'Banana' ]</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue6" name="arrayValue"><br>
+            <div class="secondary-input">
+              <div class="container">
+                <div class="row mx-5 my-3">
+                  <div class="col-3 align-self-center text-end">Start(number):</div>
+                  <div class="col-9">
+                    <input type="text" class="secondaryInput" id="startValue" name="startValue">
+                  </div>
+                </div>
+                <div class="row mx-5 my-3">
+                  <div class="col-3 align-self-center text-end">Delete Count(number):</div>
+                  <div class="col-9">
+                    <input type="text" class="secondaryInput" id="deleteCountValue" name="deleteCountValue"
+                      placeholder="(optional)">
+                  </div>
+                </div>
+                <div class="row mx-5 my-3">
+                  <div class="col-3 align-self-center text-end">Element(s):</div>
+                  <div class="col-9">
+                    <input type="text" class="secondaryInput" id="elementValue" name="elementValue"
+                      placeholder="(optional)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getSpliceOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue('6'); document.getElementById('startValue').value = '';
+                    document.getElementById('deleteCountValue').value = '';
+                    document.getElementById('elementValue').value = ''">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output6"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Shift div-->
       <div id="shift" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.shift()</p>
+        </div>
+        <div class="about my-3">
+          The <code>shift()</code> method removes the first element from an array and returns that removed element. This
+          method changes the length of the array.
         </div>
         <div class="code">
           <code>
@@ -188,12 +396,38 @@
             <span class="comment">// expected output: [ 'Orange', 'Kiwi', 'Mango', 'Banana' ]</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue7" name="arrayValue">
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getShiftOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue('7')">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output7"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Sort div-->
-      <div id="sort" class="main-content" style="display: none;"> 
+      <div id="sort" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.sort()</p>
+        </div>
+        <div class="about my-3">
+          The <code>sort()</code> method sorts the elements of an array in place and returns the sorted array. The
+          default sort order is ascending, built upon converting the elements into strings, then comparing their
+          sequences of UTF-16 code units values.
         </div>
         <div class="code">
           <code>
@@ -203,12 +437,37 @@
             <span class="comment">// expected output: [ 'Apple', 'Banana', 'Kiwi', 'Mango', 'Orange' ]</span>
           </code>
         </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue8" name="arrayValue">
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getSortOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue('8')">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output8"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--Reverse div-->
       <div id="reverse" class="main-content" style="display: none;">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.reverse()</p>
+        </div>
+        <div class="about my-3">
+          The <code>reverse()</code> method reverses an array in place. The first array element becomes the last, and
+          the last array element becomes the first.
         </div>
         <div class="code">
           <code>
@@ -217,6 +476,27 @@
             console.<span class="function">log</span>(fruits.<span class="function">reverse</span>())<br>
             <span class="comment">// expected output: [ 'Banana', 'Mango', 'Kiwi', 'Orange', 'Apple' ]</span>
           </code>
+        </div>
+        <div class="input-output my-3">
+          <div class="input-box my-3">
+            Enter your array here...<br>
+            <input type="text" class="arrayValue" id="arrayValue9" name="arrayValue">
+          </div>
+          <div class="output-box">
+            <div class="container">
+              <div class="row">
+                <div class="col-2 align-items-center">
+                  <button class="button my-2" onclick="getReverseOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue('9')">Reset</button>
+                </div>
+                <div class="col-10">
+                  <div class="output">
+                    <p id="output9"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
