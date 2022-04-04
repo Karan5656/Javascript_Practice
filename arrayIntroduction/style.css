@@ -75,6 +75,10 @@ section {
   margin-left: 250px;
 }
 
+#intro {
+  display: block;
+}
+
 .intro {
   margin: 20px 50px;
   font-size: larger;
@@ -125,15 +129,20 @@ code {
   color: #666666;
 }
 
-.input-output {
+.input-output-container {
   width: 93%;
 }
 
-.secondaryInput {
+.main-content {
+  display: none;
+}
+
+.secondary-input {
   padding: 5px 6px !important;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   width: 100%;
   margin: 8px 0px;
   padding: 10px 12px;
@@ -161,7 +170,7 @@ input[type="text"]:focus {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.output {
+.output-box {
   display: block;
   border: 1px solid #cfcfd8;
   margin-top: 8px;

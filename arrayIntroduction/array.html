@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300&family=Lato:wght@900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
+  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -72,7 +72,7 @@
     <div class="container" id="content">
 
       <!--Intro div-->
-      <div id="intro" style="display: block;">
+      <div id="intro">
         <p class="intro">
           <b>Welcome to Array Introduction!</b><br>
           This is Single page application build with HTML, CSS, Javasctipt and AJAX.
@@ -80,7 +80,7 @@
       </div>
 
       <!--String to array div-->
-      <div id="string" class="main-content" style="display: none;">
+      <div id="string" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Convert array to string</p>
         </div>
@@ -99,31 +99,32 @@
             <span class="comment">//string</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue1" name="arrayValue">
-          </div>
-          <div class="output-box">
+        <form id="formString">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              <label class="form-label">Enter your array here...</label><br>
+              <input type="text" class="array-input" id="arrayValue1" name="array-input" required>
+            </div>
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getStringOutput()">Run</button>
-                  <button class="button my-2" onclick="resetValue('1')">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getStringOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output1"></p>
+                  <div class="output-box">
+                    <p class="output" id="output1"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Last Element div-->
-      <div id="lastElement" class="main-content" style="display: none;">
+      <div id="lastElement" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Last element of the array</p>
         </div>
@@ -139,31 +140,32 @@
             <span class="comment">//Banana</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue2" name="arrayValue">
-          </div>
-          <div class="output-box">
+        <form id="formLastElement">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue2" name="array-input" required>
+            </div>
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getLastElementOutput()">Run</button>
-                  <button class="button my-2" onclick="resetValue('2')">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getLastElementOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output2"></p>
+                  <div class="output-box">
+                    <p class="output" id="output2"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Push div-->
-      <div id="push" class="main-content" style="display: none;">
+      <div id="push" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.push()</p>
         </div>
@@ -182,42 +184,42 @@
               ]</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue3" name="arrayValue"><br>
-            <div class="secondary-input">
-              <div class="container">
-                <div class="row mx-5 my-3">
-                  <div class="col-3 align-self-center text-end">Push Element(s):</div>
-                  <div class="col-9">
-                    <input type="text" class="secondaryInput" id="pushElementValue" name="pushElementValue">
+        <form id="formPush">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue3" name="array-input" required><br>
+              <div class="secondary-input">
+                <div class="container">
+                  <div class="row mx-5 my-3">
+                    <div class="col-3 align-self-center text-end">Push Element(s):</div>
+                    <div class="col-9">
+                      <input type="text" class="secondary-input" id="pushElementValue" name="pushElementValue" required>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="output-box">
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getPushOutput()">Run</button>
-                  <button class="button my-2"
-                    onclick="resetValue('3'); document.getElementById('unshiftElementValue').value = ''">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getPushOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output3"></p>
+                  <div class="output-box">
+                    <p class="output" id="output3"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Pop div-->
-      <div id="pop" class="main-content" style="display: none;">
+      <div id="pop" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.pop()</p>
         </div>
@@ -235,31 +237,32 @@
             <span class="comment">// expected output: [ 'Apple', 'Orange', 'Kiwi', 'Mango' ]</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue4" name="arrayValue">
-          </div>
-          <div class="output-box">
+        <form id="formPop">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue4" name="array-input" required>
+            </div>
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getPopOutput()">Run</button>
-                  <button class="button my-2" onclick="resetValue('4')">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getPopOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output4"></p>
+                  <div class="output-box">
+                    <p class="output" id="output4"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Unshift div-->
-      <div id="unshift" class="main-content" style="display: none;">
+      <div id="unshift" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.unshift()</p>
         </div>
@@ -277,42 +280,43 @@
               ]</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue5" name="arrayValue"><br>
-            <div class="secondary-input">
-              <div class="container">
-                <div class="row mx-5 my-3">
-                  <div class="col-3 align-self-center text-end">Unshift Element(s):</div>
-                  <div class="col-9">
-                    <input type="text" class="secondaryInput" id="unshiftElementValue" name="unshiftElementValue">
+        <form id="formUnshift">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue5" name="array-input" required><br>
+              <div class="secondary-input">
+                <div class="container">
+                  <div class="row mx-5 my-3">
+                    <div class="col-3 align-self-center text-end">Unshift Element(s):</div>
+                    <div class="col-9">
+                      <input type="text" class="secondary-input" id="unshiftElementValue" name="unshiftElementValue"
+                        required>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="output-box">
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getUnshiftOutput()">Run</button>
-                  <button class="button my-2"
-                    onclick="resetValue('5'); document.getElementById('unshiftElementValue').value = ''">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getUnshiftOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output5"></p>
+                  <div class="output-box">
+                    <p class="output" id="output5"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Splice div-->
-      <div id="splice" class="main-content" style="display: none;">
+      <div id="splice" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.splice()</p>
         </div>
@@ -329,57 +333,56 @@
             <span class="comment">// expected output: [ 'Apple', 'Orange', 'Cherry', 'Mango', 'Banana' ]</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue6" name="arrayValue"><br>
-            <div class="secondary-input">
-              <div class="container">
-                <div class="row mx-5 my-3">
-                  <div class="col-3 align-self-center text-end">Start(number):</div>
-                  <div class="col-9">
-                    <input type="text" class="secondaryInput" id="startValue" name="startValue">
+        <form id="formSplice">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue6" name="array-input" required><br>
+              <div class="secondary-input">
+                <div class="container">
+                  <div class="row mx-5 my-3">
+                    <div class="col-3 align-self-center text-end">Start:</div>
+                    <div class="col-9">
+                      <input type="number" class="secondary-input" id="startValue" name="startValue" required>
+                    </div>
                   </div>
-                </div>
-                <div class="row mx-5 my-3">
-                  <div class="col-3 align-self-center text-end">Delete Count(number):</div>
-                  <div class="col-9">
-                    <input type="text" class="secondaryInput" id="deleteCountValue" name="deleteCountValue"
-                      placeholder="(optional)">
+                  <div class="row mx-5 my-3">
+                    <div class="col-3 align-self-center text-end">Delete Count:</div>
+                    <div class="col-9">
+                      <input type="number" class="secondary-input" id="deleteCountValue" name="deleteCountValue"
+                        placeholder="(optional)">
+                    </div>
                   </div>
-                </div>
-                <div class="row mx-5 my-3">
-                  <div class="col-3 align-self-center text-end">Element(s):</div>
-                  <div class="col-9">
-                    <input type="text" class="secondaryInput" id="elementValue" name="elementValue"
-                      placeholder="(optional)">
+                  <div class="row mx-5 my-3">
+                    <div class="col-3 align-self-center text-end">Element(s):</div>
+                    <div class="col-9">
+                      <input type="text" class="secondary-input" id="elementValue" name="elementValue"
+                        placeholder="(optional)">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="output-box">
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getSpliceOutput()">Run</button>
-                  <button class="button my-2" onclick="resetValue('6'); document.getElementById('startValue').value = '';
-                    document.getElementById('deleteCountValue').value = '';
-                    document.getElementById('elementValue').value = ''">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getSpliceOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output6"></p>
+                  <div class="output-box">
+                    <p class="output" id="output6"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Shift div-->
-      <div id="shift" class="main-content" style="display: none;">
+      <div id="shift" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.shift()</p>
         </div>
@@ -396,31 +399,32 @@
             <span class="comment">// expected output: [ 'Orange', 'Kiwi', 'Mango', 'Banana' ]</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue7" name="arrayValue">
-          </div>
-          <div class="output-box">
+        <form id="formShift">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue7" name="array-input" required>
+            </div>
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getShiftOutput()">Run</button>
-                  <button class="button my-2" onclick="resetValue('7')">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getShiftOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output7"></p>
+                  <div class="output-box">
+                    <p class="output" id="output7"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Sort div-->
-      <div id="sort" class="main-content" style="display: none;">
+      <div id="sort" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.sort()</p>
         </div>
@@ -437,31 +441,32 @@
             <span class="comment">// expected output: [ 'Apple', 'Banana', 'Kiwi', 'Mango', 'Orange' ]</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue8" name="arrayValue">
-          </div>
-          <div class="output-box">
+        <form id="formSort">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue8" name="array-input" required>
+            </div>
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getSortOutput()">Run</button>
-                  <button class="button my-2" onclick="resetValue('8')">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getSortOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output8"></p>
+                  <div class="output-box">
+                    <p class="output" id="output8"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!--Reverse div-->
-      <div id="reverse" class="main-content" style="display: none;">
+      <div id="reverse" class="main-content">
         <div class="header-inner">
           <p class="h3 text-start">Array.prptotype.reverse()</p>
         </div>
@@ -477,31 +482,32 @@
             <span class="comment">// expected output: [ 'Banana', 'Mango', 'Kiwi', 'Orange', 'Apple' ]</span>
           </code>
         </div>
-        <div class="input-output my-3">
-          <div class="input-box my-3">
-            Enter your array here...<br>
-            <input type="text" class="arrayValue" id="arrayValue9" name="arrayValue">
-          </div>
-          <div class="output-box">
+        <form id="formReverse">
+          <div class="input-output-container my-3">
+            <div class="input-box my-3">
+              Enter your array here...<br>
+              <input type="text" class="array-input" id="arrayValue9" name="array-input" required>
+            </div>
+
             <div class="container">
               <div class="row">
                 <div class="col-2 align-items-center">
-                  <button class="button my-2" onclick="getReverseOutput()">Run</button>
-                  <button class="button my-2" onclick="resetValue('9')">Reset</button>
+                  <button type="submit" class="button my-2" onclick="getReverseOutput()">Run</button>
+                  <button class="button my-2" onclick="resetValue()">Reset</button>
                 </div>
                 <div class="col-10">
-                  <div class="output">
-                    <p id="output9"></p>
+                  <div class="output-box">
+                    <p class="output" id="output9"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
-  <script src="script.js"></script>
+
 </body>
 
 </html>
